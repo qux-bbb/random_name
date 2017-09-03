@@ -10,17 +10,21 @@
 '''
 
 import random
+import platform
 
 xings = open("xing.txt",'r').read().split(" ")
 mings = open("ming.txt",'r').read().split(" ")
 
-
-xings_o = random.randint(0,len(xings)-1)
-xing = xings[xings_o]
+xing = random.choice(xings)
 
 ming = ""
 for i in range(random.randint(1,2)):
-	mings_o = random.randint(0,len(mings)-1)
-	ming += mings[mings_o]
+	ming += random.choice(mings)
 
-print(xing.decode("utf-8").encode("gbk") + ":" + ming.decode("utf-8").encode("gbk"))
+# 根据操作系统选择输出方式，支持linux和windows
+now_plat = platform.system()
+if now_plat == "Linux":
+	print(xing + ":" + ming)
+else:
+	print(xing.decode("utf-8").encode("gbk") + ":" + ming.decode("utf-8").encode("gbk"))
+
