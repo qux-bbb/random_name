@@ -91,7 +91,9 @@ public class MainActivity extends AppCompatActivity {
     private String randomName(String[] xings, String[] mings){
         String xing = randomWord(xings);
         String ming = randomWord(mings);
-        ming += randomWord(mings);
+        if (Math.random() > 0.5){
+            ming += randomWord(mings);
+        }
         String lastName = xing + ':' + ming;
         return lastName;
     }
