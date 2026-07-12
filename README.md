@@ -9,4 +9,4 @@
 由于编码的原因，所以最好在命令行下使用  
 
 ## android版
-不能自己更换txt文件，用起来比较方便
+Android 版已迁移至独立仓库：[qux-bbb/random-name-android](https://github.com/qux-bbb/random-name-android)
